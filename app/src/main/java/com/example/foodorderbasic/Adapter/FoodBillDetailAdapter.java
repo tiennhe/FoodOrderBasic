@@ -71,23 +71,9 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
         holder.txttongtien.setText(String.valueOf(model.getTongtien()));
         holder.txtsodienthoai.setText(model.getSodienthoai());
 
-
-        ArrayList<FoodModel> modelArrayList = new ArrayList<>();
-        modelArrayList = (ArrayList<FoodModel>) FoodDatabase.getInstance(context).foodDao().getlistItemcart();
-
-        Log.d("array", ": "+modelArrayList.toString());
+        holder.listproductbilldetail.setText(model.getListsanpham());
 
 
-        for (int i = 0; i <modelArrayList.size() ; i++) {
-            Toast.makeText(context, modelArrayList.get(i).getIdbill()+"aray", Toast.LENGTH_SHORT).show();
-        }
-
-        ListproductBillDetailAdapter billDetailAdapter = new ListproductBillDetailAdapter(modelArrayList , context);
-
-        LinearLayoutManager manager = new LinearLayoutManager(context);
-        holder.rcllistproduct.setLayoutManager(manager);
-        holder.rcllistproduct.setAdapter(billDetailAdapter);
-        billDetailAdapter.notifyDataSetChanged();
 
         holder.btndelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,7 +105,7 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtmadonhang , txthoten , txtdiachi , txtsodienthoai , txtngaydathang , txtstatus , txttongtien;
+        TextView txtmadonhang , txthoten , txtdiachi , txtsodienthoai , txtngaydathang , txtstatus , txttongtien , listproductbilldetail;
         RecyclerView rcllistproduct ;
         Button buttonxacnhandonhang , btndelete ;
 
@@ -135,9 +121,11 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
             txttongtien = itemView.findViewById(R.id.txttongtienbilldetail);
             buttonxacnhandonhang = itemView.findViewById(R.id.btnxacnhandonhang);
 
+            listproductbilldetail = itemView.findViewById(R.id.txtlistproduct);
+
             btndelete = itemView.findViewById(R.id.btndelete);
 
-            rcllistproduct = itemView.findViewById(R.id.listproductbilldetail);
+
         }
     }
 }

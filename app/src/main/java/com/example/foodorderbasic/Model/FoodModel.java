@@ -5,7 +5,7 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
-@Entity(tableName = "food_order_basics")
+@Entity(tableName = "food_orders")
 public class FoodModel implements Serializable {
      @PrimaryKey(autoGenerate = true)
     private int id;
@@ -158,5 +158,10 @@ public class FoodModel implements Serializable {
     public FoodModel() {
     }
 
-
+    @Override
+    public String toString() {
+        return "-" +"" + name + "(" +
+                "" + quantity*giadiscount +" VNĐ)"+
+                "-Số lượng:"+quantity+"\n";
+    }
 }

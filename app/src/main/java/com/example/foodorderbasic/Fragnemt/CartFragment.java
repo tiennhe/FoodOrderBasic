@@ -178,14 +178,23 @@ public class CartFragment extends Fragment {
                 }else {
                     txterradress.setVisibility(View.GONE);
                 }
+                ArrayList<FoodModel>  modelArrayList1= new ArrayList<>();
 
-                BillModel billModel = new BillModel(  phuongthuc , hoten,sodienthoai , adress , tongtien , 0 , 3 , date);
+                modelArrayList1 = (ArrayList<FoodModel>) FoodDatabase.getInstance(getContext()).foodDao().getlistItemcart();
 
+
+                StringBuilder stringBuilder = new StringBuilder();
+                for (FoodModel object : modelArrayList1) {
+                    stringBuilder.append(object.toString()); // Định nghĩa phương thức toString() trong lớp MyObject
+                    stringBuilder.append("\n"); // Thêm ký tự xuống dòng (newline) nếu cần thiết
+                }
+
+                String result = stringBuilder.toString();
+
+                Log.d("kê quả", "onClick: "+result);
+                BillModel billModel = new BillModel(  phuongthuc , hoten,sodienthoai , adress , tongtien , 0 , result,3 , date);
                 BillDatabase.getInstance(getContext()).billDAO().insertBill(billModel);
                 Toast.makeText(getContext(), "đặt hàng thành công sucessfuly", Toast.LENGTH_SHORT).show();
-
-               
-
                 bottomSheetDialog.dismiss();
             }
         });
@@ -198,7 +207,6 @@ public class CartFragment extends Fragment {
 
         for (int i = 0; i <list.size() ; i++) {
            tongtiencart+= list.get(i).getGiadiscount()*list.get(i).getQuantity();
-
         }
         txttongtien.setText(tongtiencart+"");
         adapter = new FoodCartAdapter(getContext(), list, new FoodCartAdapter.tongtien() {
@@ -212,8 +220,6 @@ public class CartFragment extends Fragment {
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-
-
 
     }
 

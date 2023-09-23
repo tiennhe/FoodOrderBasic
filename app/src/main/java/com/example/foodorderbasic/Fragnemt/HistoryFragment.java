@@ -8,14 +8,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.foodorderbasic.Adapter.FoodBillDetailAdapter;
 import com.example.foodorderbasic.Model.BillModel;
+import com.example.foodorderbasic.Model.FoodModel;
 import com.example.foodorderbasic.R;
 import com.example.foodorderbasic.RoomDatabase.BillDatabase;
+import com.example.foodorderbasic.RoomDatabase.FoodDatabase;
 
 import java.util.ArrayList;
 
@@ -49,7 +52,10 @@ ArrayList<BillModel> arrayList  = new ArrayList<>();
         adapter = new FoodBillDetailAdapter(getContext() , arrayList);
 
         recyclerViewhienthilistbill.setLayoutManager(manager);
-        recyclerViewhienthilistbill.setAdapter(adapter);
+        recyclerViewhienthilistbill.setAdapter(
+                adapter);
+
+
         adapter.notifyDataSetChanged();
         return view;
 

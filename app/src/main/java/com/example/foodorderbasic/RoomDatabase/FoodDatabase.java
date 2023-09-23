@@ -11,7 +11,7 @@ import com.example.foodorderbasic.Model.FoodModel;
 @Database(entities = {FoodModel.class} , version = 1)
 public abstract class FoodDatabase extends RoomDatabase {
 
-    private static  final String DATABASE_NAME = "foodordersbasics.db";
+    private static  final String DATABASE_NAME = "foodorders.db";
     private static FoodDatabase instance;
     public  static synchronized  FoodDatabase getInstance(Context context){
     if(instance==null){

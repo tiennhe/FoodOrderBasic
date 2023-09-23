@@ -10,7 +10,7 @@ import com.example.foodorderbasic.Model.BillModel;
 
 @Database(entities = {BillModel.class} , version = 1)
 public abstract class BillDatabase extends RoomDatabase {
-    private static  final String DATABASE_BILL_NAME = "billfoods.db";
+    private static  final String DATABASE_BILL_NAME = "billdetail.db";
     private static BillDatabase instance;
     public  static synchronized  BillDatabase getInstance(Context context){
         if(instance==null){
