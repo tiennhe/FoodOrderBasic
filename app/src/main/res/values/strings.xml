@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">FoodOrderBasic</string>
+    <string name="action_home">Home</string>
+    <string name="action_cart"> Giỏ hàng</string>
+    <string name="action_feedback">Phản hồi</string>
+    <string name="action_contact">Liên hệ</string>
+    <string name="action_history">Lịch sử</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_addtocart">Thêm vào giỏ hàng</string>
+    <string name="resiter">Resiter</string>
+    <string name="sing_in">Sing In</string>
+    <string name="sign_in">Đăng nhập</string>
+</resources>

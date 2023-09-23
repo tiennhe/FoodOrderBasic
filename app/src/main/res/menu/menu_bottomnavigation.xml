@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_home" android:title="@string/action_home" android:icon="@drawable/home"/>
+    <item android:id="@+id/action_cart" android:title="@string/action_cart" android:icon="@drawable/grocery_store"/>
+    <item android:id="@+id/action_feedback" android:title="@string/action_feedback" android:icon="@drawable/feedback"/>
+    <item android:id="@+id/action_contact" android:title="@string/action_contact" android:icon="@drawable/customerservice"/>
+    <item android:id="@+id/action_history" android:title="@string/action_history" android:icon="@drawable/file"/>
+
+</menu>

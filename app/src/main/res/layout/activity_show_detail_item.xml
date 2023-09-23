@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relaytivelayoutshowdetail"
+    tools:context=".Activity.ShowDetailItemActivity">
+
+
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarshowdetail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#FF4C3F"
+        app:layout_constraintTop_toTopOf="parent" >
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chi tiết món ăn"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center" />
+    </androidx.appcompat.widget.Toolbar>
+
+<RelativeLayout
+    android:id="@+id/layoutbanerdetail"
+    android:layout_width="match_parent"
+    android:layout_below="@+id/toolbarshowdetail"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imgshowdetail"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/suonxaochuanot"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/txtphantramgiamgia"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginTop="10dp"
+        android:background="#FD2323"
+        android:text="Giam 5%"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+</RelativeLayout>
+
+    <TextView
+        android:layout_margin="5dp"
+        android:id="@+id/txtnameshowdetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sườn xào chua ngọt"
+        android:layout_below="@+id/layoutbanerdetail"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+<LinearLayout
+    android:layout_margin="5dp"
+    android:id="@+id/layoutgia"
+    android:layout_below="@+id/txtnameshowdetail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Gía:"/>
+    <TextView
+        android:id="@+id/giagiamdetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:paddingLeft="15dp"
+        android:textColor="#FD3E3E"
+        android:text="760000 VNĐ"/>
+    <TextView
+        android:id="@+id/giagocdetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:paddingLeft="15dp"
+        android:text="80000 VNĐ"/>
+</LinearLayout>
+
+    <View
+        android:id="@+id/viewline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layoutgia"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#FD2E2E" />
+
+    <TextView
+        android:id="@+id/titlemota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mô tả"
+        android:layout_below="@+id/viewline"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="#FF3939"/>
+
+    <TextView
+        android:id="@+id/txtmotashowdetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titlemota"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="sdnakjdsadkjdnsadksa" />
+    <TextView
+        android:id="@+id/titleimg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Một số hình ảnh khac"
+        android:layout_below="@+id/txtmotashowdetail"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="#FF3939"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@+id/titleimg"
+        android:layout_width="match_parent"
+        android:id="@+id/cardviewimgother"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnaddtocartshowdetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cardviewimgother"
+        android:background="@drawable/custombuttom_addtocart"
+        android:text="Thêm vào giỏ hàng"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+   />
+
+
+
+
+</RelativeLayout>

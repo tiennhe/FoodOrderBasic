@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carviewitem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consstranlayout"
+        android:layout_width="180dp"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/relaytive"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+
+                android:id="@+id/imgbottomshet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_corner_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banhxeo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:layout_margin="20dp"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/consstranlayout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/txtnamebottomsheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sườn xào chua ngọt"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txtgiabanbottomsheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="#FB2525"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btngiam"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="-"
+
+                android:textSize="25dp"
+                android:background="@drawable/custom_bottom_quantity"/>
+            <TextView
+                android:id="@+id/tvquantity"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="1"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:background="@drawable/custom_quantity"/>
+            <Button
+                android:id="@+id/btntang"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="+"
+
+                android:textSize="25dp"
+                android:background="@drawable/custom_bottom_quantity"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/consstranlayout">
+
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/custom_bottom_cancel"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:text="Hủy bỏ" />
+
+        <Button
+            android:id="@+id/btnaddtocart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/custombuttom_addtocart"
+            android:text="Thêm vào giỏ hàng" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

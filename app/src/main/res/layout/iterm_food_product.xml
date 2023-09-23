@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+   android:layout_margin="6dp"
+app:cardCornerRadius="15dp"
+    android:id="@+id/carviewitem"
+    android:layout_height="wrap_content">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       >
+
+       <RelativeLayout
+           android:id="@+id/relaytive"
+           android:layout_width="match_parent"
+           android:layout_height="120dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
+
+           <ImageView
+
+               android:id="@+id/imgfoodproduct"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:background="@drawable/custom_corner_image"
+               android:scaleType="centerCrop"
+               android:src="@drawable/banhxeo"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <TextView
+               android:id="@+id/tvDiscount"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+
+               android:layout_alignParentTop="true"
+               android:layout_marginTop="50dp"
+               android:background="#FD3333"
+               android:gravity="center"
+               android:text="Giảm 10%"
+               android:textColor="@color/white"
+               android:textStyle="bold" />
+       </RelativeLayout>
+
+       <TextView
+           android:layout_margin="5dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/relaytive"
+           android:id="@+id/tvname"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/relaytive"
+           android:layout_marginBottom="-37dp"
+           android:text="Sườn xào chua ngọt"
+           android:textColor="@color/black"
+           android:textSize="17sp"
+           android:textStyle="bold" />
+
+       <TextView
+
+           android:id="@+id/tvgiagoc"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="4dp"
+           android:layout_marginTop="30dp"
+           android:text="180000 VNĐ"
+           android:textColor="#CD000000"
+           android:textStyle="bold"
+           app:layout_constraintStart_toStartOf="parent"
+
+           app:layout_constraintTop_toBottomOf="@+id/relaytive" />
+
+       <TextView
+           android:id="@+id/tvgiadiscount"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="50dp"
+            android:layout_marginLeft="5dp"
+
+           android:text="170000 VNĐ"
+           android:textColor="#CDFB2727"
+           android:textStyle="bold"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/relaytive" />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
