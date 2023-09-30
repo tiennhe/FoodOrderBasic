@@ -16,8 +16,11 @@ public interface BillDAO {
     @Insert
     void insertBill(BillModel model);
 
-    @Query("SELECT * FROM bill_list_productts")
+    @Query("SELECT * FROM bill_list_produts")
     List<BillModel> getlistBill();
+
+    @Query("SELECT * FROM bill_list_produts Where Uid = :id")
+    List<BillModel> getlistBillid(String id);
 
     @Update
     void updateBill(BillModel billModel);

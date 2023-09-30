@@ -24,6 +24,8 @@ import com.example.foodorderbasic.Model.FoodModel;
 import com.example.foodorderbasic.R;
 import com.example.foodorderbasic.RoomDatabase.FoodDatabase;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 
@@ -33,6 +35,8 @@ public class ShowDetailItemActivity extends AppCompatActivity {
     TextView txtgiamgia ,txtnamedetail , txtgiagiamdetail , txtgiagocdetail , txtmotadetail ;
         Toolbar toolbar ;
         Button btnshowbottomshetdilog ;
+
+
     int i = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,14 +106,22 @@ public class ShowDetailItemActivity extends AppCompatActivity {
                 double giadiscount = object.getGia()-(object.getGia()*object.getDiscount()/100);
                 Toast.makeText(ShowDetailItemActivity.this, giadiscount+"giá discount", Toast.LENGTH_SHORT).show();
                 Toast.makeText(ShowDetailItemActivity.this, gia+"", Toast.LENGTH_SHORT).show();
-                FoodModel  model = new FoodModel(soluong , name  , object.getGia(),  img   ,giadiscount , gia);
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                FoodModel  model = new FoodModel(soluong , name  , object.getGia(),  img  , user. getUid(),giadiscount , gia);
 
                 if(isFoodexits(model)){
 
                 }
-                FoodDatabase.getInstance(ShowDetailItemActivity.this).foodDao().insertCart(model);
+
+                if(user!=null){
+                    Toast.makeText(ShowDetailItemActivity.this, user.getUid()+"", Toast.LENGTH_SHORT).show();
+                                    FoodDatabase.getInstance(ShowDetailItemActivity.this).foodDao().insertCart(model);
                 Toast.makeText(ShowDetailItemActivity.this, "add sucessfuly", Toast.LENGTH_SHORT).show();
                 bottomSheetDialog.dismiss();
+                }else{
+                    Toast.makeText(ShowDetailItemActivity.this, "không tìm thấy user", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         Intent intent = getIntent();

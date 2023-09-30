@@ -14,15 +14,16 @@ import java.util.List;
 public interface FoodDao {
     @Insert
     void insertCart(FoodModel food);
-    @Query("SELECT * FROM food_orders")
+    @Query("SELECT * FROM food_orders_basic")
     List<FoodModel> getlistItemcart();
-
-    @Query("SELECT * FROM food_orders WHERE name= :namecheck")
+    @Query("SELECT * FROM food_orders_basic Where Uid= :id")
+    List<FoodModel> getlistItemcartbyId(String id);
+    @Query("SELECT * FROM food_orders_basic WHERE name= :namecheck")
     List<FoodModel> checkitemproduct(String namecheck);
     @Update
 
     void updateFood(FoodModel foodModel);
-    @Query("SELECT * FROM food_orders WHERE idbill = :userId")
+    @Query("SELECT * FROM food_orders_basic WHERE idbill = :userId")
     List<FoodModel> getUsersById(int userId);
 
 

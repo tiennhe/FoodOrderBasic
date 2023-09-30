@@ -1,6 +1,8 @@
 package com.example.foodorderbasic.Fragnemt;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,13 +20,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.foodorderbasic.Activity.AcountManager;
 import com.example.foodorderbasic.Adapter.FoodproductAdapter;
 import com.example.foodorderbasic.Adapter.PhotoAutoSlideAdapter;
 import com.example.foodorderbasic.Model.FoodModel;
 import com.example.foodorderbasic.Model.PhotoHeader;
 import com.example.foodorderbasic.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,7 +47,7 @@ import me.relex.circleindicator.CircleIndicator;
 import me.relex.circleindicator.CircleIndicator3;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment   {
 
 private ViewPager2 viewPager ;
 private CircleIndicator3 indicator ;
@@ -49,7 +57,14 @@ private Button button ;
 private FoodproductAdapter adapter ;
 private RecyclerView recyclerView ;
 private List<PhotoHeader> list = new ArrayList<>() ;
+
+private  View view ;
 private ArrayList<FoodModel> arrayList = new ArrayList<>();
+
+ImageView imganhdaidien ;
+TextView txtname , txtquanliacout;
+
+
 private Handler handler = new Handler() ;
 private Runnable runnable = new Runnable() {
     @Override
@@ -74,12 +89,24 @@ private Runnable runnable = new Runnable() {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        view= inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.recycleview);
         viewPager = view.findViewById(R.id.viewpagerSlideauto) ;
         indicator = view.findViewById(R.id.circle_center);
+        imganhdaidien = view.findViewById(R.id.imganhdaidien);
+        txtname = view.findViewById(R.id.txtnameacount);
+        txtquanliacout = view.findViewById(R.id.txtquanlyacount);
+        txtquanliacout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity() , AcountManager.class);
+                startActivity(intent);
+
+            }
+        });
 
         getdataFormFirebase();
+        HomeFragment homeFragment = new HomeFragment();
 
 
         adapter = new FoodproductAdapter(getContext()  ,arrayList);
@@ -113,6 +140,8 @@ private Runnable runnable = new Runnable() {
 
 
 
+
+
     private List<PhotoHeader> getListPhoto() {
 
         List<PhotoHeader> list = new ArrayList<>();
@@ -139,6 +168,8 @@ private Runnable runnable = new Runnable() {
     @Override
     public void onStart() {
         super.onStart();
+
+        showUserInformation();
 
 
     }
@@ -203,18 +234,31 @@ private Runnable runnable = new Runnable() {
                Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
            }
         }
+    public void showUserInformation(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user==null){
+            return;
+        }
+        String name = user.getDisplayName();
+        String email = user.getEmail();
+
+        Uri imgaanh = user.getPhotoUrl();
+
+
+
+        txtname.setText(name);
+        Glide.with(getContext()).load(imgaanh).error(R.drawable.user).into(imganhdaidien);
+
+
+    }
+
+
 
     @Override
     public void onResume() {
         super.onResume();
-        handler.postDelayed(runnable , 3000);
-
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
+        showUserInformation();
     }
 
 }
+

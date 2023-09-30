@@ -50,7 +50,7 @@
 
     <EditText
         android:id="@+id/til_Email"
-
+        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
@@ -69,6 +69,8 @@
 
     </EditText>
     <EditText
+
+        android:textColor="@color/white"
         android:drawableLeft="@drawable/baseline_vpn_key_24"
         android:id="@+id/til_Pass"
         android:layout_width="match_parent"

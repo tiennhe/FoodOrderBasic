@@ -20,6 +20,8 @@ import com.example.foodorderbasic.Model.FoodModel;
 import com.example.foodorderbasic.R;
 import com.example.foodorderbasic.RoomDatabase.BillDatabase;
 import com.example.foodorderbasic.RoomDatabase.FoodDatabase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -27,6 +29,8 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
 
     private Context context ;
     private ArrayList<BillModel> arrayList ;
+
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     public FoodBillDetailAdapter(Context context, ArrayList<BillModel> arrayList) {
         this.context = context;

@@ -3,7 +3,7 @@ package com.example.foodorderbasic.Model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "bill_list_productts")
+@Entity(tableName = "bill_list_produts")
 public class BillModel {
 
     @PrimaryKey(autoGenerate = true)
@@ -18,6 +18,16 @@ public class BillModel {
 
     private int statusbill_admin;
 
+    private String Uid ;
+
+    public String getUid() {
+        return Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
+    }
+
     public BillModel(String phuongthucthanhtoan, String hoten, String sodienthoai, String adressgiaohang, double tongtien, int status_Bill, String listsanpham, int statusbill_admin, String date) {
         this.phuongthucthanhtoan = phuongthucthanhtoan;
         this.hoten = hoten;
@@ -27,6 +37,19 @@ public class BillModel {
         this.status_Bill = status_Bill;
         this.listsanpham = listsanpham;
         this.statusbill_admin = statusbill_admin;
+        this.date = date;
+    }
+
+    public BillModel(String phuongthucthanhtoan, String hoten, String sodienthoai, String adressgiaohang, double tongtien, int status_Bill, String listsanpham, int statusbill_admin, String uid, String date) {
+        this.phuongthucthanhtoan = phuongthucthanhtoan;
+        this.hoten = hoten;
+        this.sodienthoai = sodienthoai;
+        this.adressgiaohang = adressgiaohang;
+        this.tongtien = tongtien;
+        this.status_Bill = status_Bill;
+        this.listsanpham = listsanpham;
+        this.statusbill_admin = statusbill_admin;
+        Uid = uid;
         this.date = date;
     }
 

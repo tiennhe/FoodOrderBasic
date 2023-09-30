@@ -11,11 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_gravity="center"
             android:layout_width="50dp"
+            android:id="@+id/imganhdaidien"
             android:layout_height="50dp"
             android:src="@drawable/user"/>
 
@@ -25,6 +28,7 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/txtnameacount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
@@ -38,7 +42,7 @@
                 android:textStyle="bold"
                 android:layout_margin="5dp"
                 android:text="Quản lý acount >"
-
+                android:id="@+id/txtquanlyacount"
                 android:textSize="15sp"/>
         </LinearLayout>
 

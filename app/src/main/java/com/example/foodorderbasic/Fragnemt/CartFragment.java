@@ -26,6 +26,8 @@ import com.example.foodorderbasic.R;
 import com.example.foodorderbasic.RoomDatabase.BillDatabase;
 import com.example.foodorderbasic.RoomDatabase.FoodDatabase;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -75,9 +77,6 @@ public class CartFragment extends Fragment {
         });
 
 
-
-
-
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
@@ -113,11 +112,12 @@ public class CartFragment extends Fragment {
         EditText txtsodienthoai = viewDilog.findViewById(R.id.edtsodienthoaibill);
         EditText txtadress = viewDilog.findViewById(R.id.edtadressiaohang);
 
+
         txttongtienbottomsheet.setText(tongtiencart+"");
         ArrayList<FoodModel> modelArrayList = new ArrayList<>();
         modelArrayList = (ArrayList<FoodModel>) FoodDatabase.getInstance(getContext()).foodDao().getlistItemcart();
         RecyclerView rcllistproduct = viewDilog.findViewById(R.id.rcllisproduct);
-        ListproductBillDetailAdapter billDetailAdapter = new ListproductBillDetailAdapter(modelArrayList , getContext());
+        ListproductBillDetailAdapter billDetailAdapter = new ListproductBillDetailAdapter(list , getContext());
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         rcllistproduct.setLayoutManager(manager);
@@ -177,49 +177,64 @@ public class CartFragment extends Fragment {
                     return;
                 }else {
                     txterradress.setVisibility(View.GONE);
-                }
-                ArrayList<FoodModel>  modelArrayList1= new ArrayList<>();
 
-                modelArrayList1 = (ArrayList<FoodModel>) FoodDatabase.getInstance(getContext()).foodDao().getlistItemcart();
+                }
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
 
 
                 StringBuilder stringBuilder = new StringBuilder();
-                for (FoodModel object : modelArrayList1) {
+                for (FoodModel object : list) {
                     stringBuilder.append(object.toString()); // Định nghĩa phương thức toString() trong lớp MyObject
                     stringBuilder.append("\n"); // Thêm ký tự xuống dòng (newline) nếu cần thiết
                 }
 
                 String result = stringBuilder.toString();
 
-                Log.d("kê quả", "onClick: "+result);
-                BillModel billModel = new BillModel(  phuongthuc , hoten,sodienthoai , adress , tongtien , 0 , result,3 , date);
-                BillDatabase.getInstance(getContext()).billDAO().insertBill(billModel);
-                Toast.makeText(getContext(), "đặt hàng thành công sucessfuly", Toast.LENGTH_SHORT).show();
-                bottomSheetDialog.dismiss();
+if(user!=null){
+    Toast.makeText(getContext(), user.getUid()+"", Toast.LENGTH_SHORT).show();
+    BillModel billModel = new BillModel(  phuongthuc , hoten,sodienthoai , adress , tongtien , 0 , result,3 , user.getUid(),  date);
+    BillDatabase.getInstance(getContext()).billDAO().insertBill(billModel);
+    Toast.makeText(getContext(), "đặt hàng thành công sucessfuly", Toast.LENGTH_SHORT).show();
+    bottomSheetDialog.dismiss();
+}else{
+    Toast.makeText(getContext(), "không tìm thấy user", Toast.LENGTH_SHORT).show();
+}
+
+
             }
         });
     }
     @Override
     public void onStart() {
         super.onStart();
-        list = new ArrayList<>() ;
-        list = (ArrayList<FoodModel>) FoodDatabase.getInstance(getContext()).foodDao().getlistItemcart();
 
-        for (int i = 0; i <list.size() ; i++) {
-           tongtiencart+= list.get(i).getGiadiscount()*list.get(i).getQuantity();
-        }
-        txttongtien.setText(tongtiencart+"");
-        adapter = new FoodCartAdapter(getContext(), list, new FoodCartAdapter.tongtien() {
-            @Override
-            public void tongtienChange(double tongtien) {
-                tongtiencart =tongtien;
-                txttongtien.setText(tongtien+"");
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user!=null){
+            Toast.makeText(getContext(), user.getUid()+"", Toast.LENGTH_SHORT).show();
+            list = new ArrayList<>() ;
+            list = (ArrayList<FoodModel>) FoodDatabase.getInstance(getContext()).foodDao().getlistItemcartbyId(user.getUid());
+
+            for (int i = 0; i <list.size() ; i++) {
+                tongtiencart+= list.get(i).getGiadiscount()*list.get(i).getQuantity();
             }
-        });
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+            txttongtien.setText(tongtiencart+"");
+            adapter = new FoodCartAdapter(getContext(), list, new FoodCartAdapter.tongtien() {
+                @Override
+                public void tongtienChange(double tongtien) {
+                    tongtiencart =tongtien;
+                    txttongtien.setText(tongtien+"");
+                }
+            });
+            LinearLayoutManager manager = new LinearLayoutManager(getContext());
+            recyclerView.setLayoutManager(manager);
+            recyclerView.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+
+        }else{
+            Toast.makeText(getContext(), "không có user", Toast.LENGTH_SHORT).show();
+        }
 
     }
 

@@ -1,10 +1,19 @@
 package com.example.foodorderbasic.Activity;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -12,13 +21,22 @@ import com.example.foodorderbasic.Adapter.ViewPagerAdapter;
 import com.example.foodorderbasic.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
+
+    public static final int PUBLIC_REQUEST_CODE = 10;
+    private static MainActivity instance;
+
         ViewPager2 viewPager2 ;
     BottomNavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        instance = this;
          navigationView = findViewById(R.id.btnavigation);
         viewPager2 = findViewById(R.id.viewpager2);
 
@@ -71,4 +89,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    public static MainActivity getInstance() {
+        return instance;
+    }
+
 }

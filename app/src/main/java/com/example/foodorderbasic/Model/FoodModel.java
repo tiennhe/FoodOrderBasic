@@ -5,7 +5,7 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
-@Entity(tableName = "food_orders")
+@Entity(tableName = "food_orders_basic")
 public class FoodModel implements Serializable {
      @PrimaryKey(autoGenerate = true)
     private int id;
@@ -17,6 +17,16 @@ public class FoodModel implements Serializable {
     private String Image ;
 
     private int  idbill;
+
+    private String Uid ;
+
+    public String getUid() {
+        return Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
+    }
 
     public int getIdbill() {
         return idbill;
@@ -67,6 +77,16 @@ public class FoodModel implements Serializable {
         this.name = name;
         this.gia = gia;
         Image = image;
+        this.giadiscount = giadiscount;
+        this.giacartproductitem = giacartproductitem;
+    }
+
+    public FoodModel(int quantity, String name, double gia, String image, String uid, double giadiscount, double giacartproductitem) {
+        this.quantity = quantity;
+        this.name = name;
+        this.gia = gia;
+        Image = image;
+        Uid = uid;
         this.giadiscount = giadiscount;
         this.giacartproductitem = giacartproductitem;
     }
