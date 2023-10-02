@@ -241,12 +241,8 @@ private Runnable runnable = new Runnable() {
         }
         String name = user.getDisplayName();
         String email = user.getEmail();
-
         Uri imgaanh = user.getPhotoUrl();
-
-
-
-        txtname.setText(name);
+        txtname.setText("Hello " +name);
         Glide.with(getContext()).load(imgaanh).error(R.drawable.user).into(imganhdaidien);
 
 

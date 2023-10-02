@@ -79,6 +79,14 @@ public class DangkyActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                if(user!=null){
+                                    Toast.makeText(DangkyActivity.this, user.getUid()+"", Toast.LENGTH_SHORT).show();
+                                }else {
+                                    Toast.makeText(DangkyActivity.this, "không tìm thấy user", Toast.LENGTH_SHORT).show();
+                                }
+                            UserModel userModel = new UserModel(user.getUid() , "","","","" ,user.getEmail());UserDataBase.getInstance(DangkyActivity.this).userDAO().insertUser(userModel);
                              Intent intent = new Intent(DangkyActivity.this , MainActivity.class);
                              startActivity(intent);
                              finishAffinity();

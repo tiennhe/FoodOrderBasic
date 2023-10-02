@@ -6,6 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.foodorderbasic.Model.BillModel;
 import com.example.foodorderbasic.Model.FoodModel;
 import com.example.foodorderbasic.Model.UserModel;
 
@@ -24,7 +25,16 @@ public interface UserDAO {
     @Update
     void updateUser(UserModel userModel);
 
+    @Query("SELECT * FROM Users Where Uid = :id")
+    UserModel getUserid(String id);
 
+    @Query("UPDATE Users SET sdt = :newField1 WHERE Uid = :itemId")
+    void updatesdttUserbyid(String itemId, String newField1);
+
+    @Query("UPDATE Users SET gioitinh = :newField1 WHERE Uid = :itemId")
+    void updategioitinhtUserbyid(String itemId, String newField1);
+    @Query("UPDATE Users SET ngaysinh = :newField1 WHERE Uid = :itemId")
+    void updatenagysinhtUserbyid(String itemId, String newField1);
 
     @Delete
     void deleteUseer(UserModel userModel) ;

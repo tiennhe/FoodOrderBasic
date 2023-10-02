@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_white_conner_16dp"
+    android:layout_margin="16dp">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:text="Edit profile"
+    android:textColor="@color/black"
+    android:textStyle="bold"
+    android:textSize="16sp"
+    android:gravity="center"
+    android:background="@drawable/bg_yellow_topleft_topright"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Vui lòng nhập dữ liệu của bạn"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="center"
+           />
+
+        <EditText
+            android:id="@+id/edtdata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            android:hint="Nhập dữ liệu"
+            android:background="@drawable/bg_editdataprofile"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnhuy"
+            android:layout_width="0dp"
+            android:background="@drawable/custombuttom_delete"
+            android:text="Hủy"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/btnupdate"
+            android:background="@drawable/custombuttom_addtocart"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textAllCaps="false"
+            android:text="Update"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>
