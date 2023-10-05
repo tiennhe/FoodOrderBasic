@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.foodorderbasic.Admin.AdminActivity;
 import com.example.foodorderbasic.Model.UserModel;
 import com.example.foodorderbasic.R;
 import com.example.foodorderbasic.RoomDatabase.UserDataBase;
@@ -81,15 +82,22 @@ public class DangkyActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                                if(user!=null){
-                                    Toast.makeText(DangkyActivity.this, user.getUid()+"", Toast.LENGTH_SHORT).show();
-                                }else {
-                                    Toast.makeText(DangkyActivity.this, "không tìm thấy user", Toast.LENGTH_SHORT).show();
+                                if(email.equals("admin@gmail.com")){
+                                    Intent intent = new Intent(DangkyActivity.this , AdminActivity.class);
+                                    startActivity(intent);
+                                }else{
+                                    if(user!=null){
+                                        Toast.makeText(DangkyActivity.this, user.getUid()+"", Toast.LENGTH_SHORT).show();
+                                    }else {
+                                        Toast.makeText(DangkyActivity.this, "không tìm thấy user", Toast.LENGTH_SHORT).show();
+                                    }
+                                    UserModel userModel = new UserModel(user.getUid() , "","","","" ,user.getEmail());UserDataBase.getInstance(DangkyActivity.this).userDAO().insertUser(userModel);
+                                    Intent intent = new Intent(DangkyActivity.this , MainActivity.class);
+                                    startActivity(intent);
+                                    finishAffinity();
                                 }
-                            UserModel userModel = new UserModel(user.getUid() , "","","","" ,user.getEmail());UserDataBase.getInstance(DangkyActivity.this).userDAO().insertUser(userModel);
-                             Intent intent = new Intent(DangkyActivity.this , MainActivity.class);
-                             startActivity(intent);
-                             finishAffinity();
+
+
                             } else {
                                 // If sign in fails, display a message to the user.
 

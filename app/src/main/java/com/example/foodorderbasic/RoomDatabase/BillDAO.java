@@ -21,6 +21,8 @@ public interface BillDAO {
 
     @Query("SELECT * FROM bill_list_produts Where Uid = :id")
     List<BillModel> getlistBillid(String id);
+    @Query("SELECT * FROM bill_list_produts Where status_Bill = :status")
+    List<BillModel> getlistBillbyStatus(int status);
 
     @Update
     void updateBill(BillModel billModel);

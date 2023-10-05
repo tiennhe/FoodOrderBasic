@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -17,6 +16,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodOrderBasic"
         tools:targetApi="31">
+        <activity
+            android:name=".Admin.ShowDetailItemActivityAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AcountUserManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.SanphamManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.DonhangfManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.DoanhthuActivity"
+            android:exported="false" />
         <activity
             android:name=".Activity.AcountManager"
             android:exported="false" />
@@ -41,8 +55,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>

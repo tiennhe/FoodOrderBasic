@@ -75,7 +75,7 @@ private   UserModel userModel = new UserModel();
         setContentView(R.layout.activity_acount_manager);
 
         buttonbtnsignout = findViewById(R.id.btnlogout);
-        instance = this;
+
         innitUI();
         initLisener();
 

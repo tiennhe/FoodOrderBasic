@@ -5,6 +5,9 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
 @Entity(tableName = "food_orders_basic")
 public class FoodModel implements Serializable {
      @PrimaryKey(autoGenerate = true)
@@ -178,10 +181,22 @@ public class FoodModel implements Serializable {
     public FoodModel() {
     }
 
+
+
     @Override
     public String toString() {
         return "-" +"" + name + "(" +
                 "" + quantity*giadiscount +" VNĐ)"+
                 "-Số lượng:"+quantity+"\n";
+    }
+
+    public Map<String , Object> toMap(){
+        HashMap<String , Object> result = new HashMap<>();
+        result.put("description" ,description);
+        result.put("name" , name);
+        result.put("image" , Image);
+        result.put("gia" , gia);
+        result.put("discount" , discount);
+        return result;
     }
 }

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:background="@drawable/custom_layout_add_product"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/edtupdateid"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_margin="10dp"
+        android:enabled="false"
+        android:background="@drawable/custom_edittext"
+        android:hint="Nhập vào id sản phẩm"
+        android:paddingLeft="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_margin="10dp"
+        android:hint="Nhập vào link ảnh sản phẩm"
+        android:id="@+id/edtupdateimg"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_margin="10dp"
+        android:hint="Nhập vào name sản phẩm"
+        android:id="@+id/edtupdatename"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_margin="10dp"
+        android:hint="Nhập vào giá sản phẩm"
+        android:id="@+id/edtupdategia"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_margin="10dp"
+        android:hint="Nhập vào phần trăm giảm giá sản phẩm"
+        android:id="@+id/edtupdatediscount"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_margin="10dp"
+        android:hint="Nhập vào mô tả sản phẩm"
+        android:id="@+id/edtupdatedesciption"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        >
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:id="@+id/btnadmincacleupdate"
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_bottom_cancel"
+            android:text="Cancle"
+            android:textAllCaps="false"/>
+        <Button
+            android:layout_marginLeft="5dp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:id="@+id/btnadminupdate"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/custombuttom_addtocart"
+            android:text="Update"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -55,7 +55,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8">
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
@@ -81,7 +80,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout7"
+            android:id="@+id/layoutdoanhthu"
             android:layout_width="180dp"
             android:layout_height="100dp"
             android:layout_marginTop="48dp"
@@ -117,14 +116,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout8"
+            android:id="@+id/layoutquanlidonhang"
             android:layout_width="180dp"
             android:layout_height="100dp"
             android:layout_marginTop="48dp"
             android:background="@drawable/donhangdaban_btg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.464"
-            app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
+            app:layout_constraintStart_toEndOf="@+id/layoutdoanhthu"
             app:layout_constraintTop_toBottomOf="@+id/textView17">
 
             <ImageView
@@ -151,14 +150,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout9"
+            android:id="@+id/layoutquanlisanpham"
             android:layout_width="180dp"
             android:layout_height="100dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/donhangduyet_btg"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayout7"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayout7"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout7">
+            app:layout_constraintEnd_toEndOf="@+id/layoutdoanhthu"
+            app:layout_constraintStart_toStartOf="@+id/layoutdoanhthu"
+            app:layout_constraintTop_toBottomOf="@+id/layoutdoanhthu">
 
             <ImageView
                 android:id="@+id/imageView8"
@@ -185,14 +184,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout10"
+            android:id="@+id/layoutquanliaccount"
             android:layout_width="180dp"
             android:layout_height="100dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/white_btg"
-            app:layout_constraintEnd_toEndOf="@+id/constraintLayout8"
-            app:layout_constraintStart_toStartOf="@+id/constraintLayout8"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
+            app:layout_constraintEnd_toEndOf="@+id/layoutquanlidonhang"
+            app:layout_constraintStart_toStartOf="@+id/layoutquanlidonhang"
+            app:layout_constraintTop_toBottomOf="@+id/layoutquanlidonhang">
 
             <ImageView
                 android:id="@+id/imageView9"

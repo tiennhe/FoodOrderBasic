@@ -98,6 +98,8 @@
         android:background="@drawable/btn_bg"
         android:padding="14dp"
         android:text="Sign in"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -5,32 +5,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp">
     <LinearLayout
-       android:layout_margin="10dp"
+        android:layout_margin="10dp"
         android:gravity=""
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mã đơn hàng:"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
-        <TextView
-            android:id="@+id/txtmadonhangbilldetail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text= "0987654"
-            android:paddingLeft="10dp"
-            android:textStyle="bold"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mã đơn hàng:"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/txtmadonhangbilldetailadmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "0987654"
+                android:paddingLeft="10dp"
+                android:textStyle="bold"
 
-            android:textSize="20sp"/>
-    </LinearLayout>
+                android:textSize="20sp"/>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
                 android:textStyle="bold"
                 android:textSize="20sp"/>
             <TextView
-                android:id="@+id/txthotenbilldetail"
+                android:id="@+id/txthotenbilldetailadmin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text= "Nguyễn văn a"
@@ -62,7 +62,7 @@
                 android:textStyle="bold"
                 android:textSize="20sp"/>
             <TextView
-                android:id="@+id/txtsdtbilldetail"
+                android:id="@+id/txtsdtbilldetailadmin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text= "0987654321"
@@ -82,7 +82,7 @@
                 android:textStyle="bold"
                 android:textSize="20sp"/>
             <TextView
-                android:id="@+id/txtadressbilldetail"
+                android:id="@+id/txtadressbilldetailadmin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text= "Lập thạch, Vĩnh Phúc"
@@ -102,13 +102,13 @@
                 android:textStyle="bold"
 
                 android:textSize="20sp"/>
-               <TextView
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:id="@+id/txtlistproduct"
-                   android:text=""
-                   android:textStyle="bold"
-                   android:textSize="15sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtlistproductadmin"
+                android:text=""
+                android:textStyle="bold"
+                android:textSize="15sp"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -126,7 +126,7 @@
                 android:text= "22/9/2023, 8:30"
                 android:paddingLeft="10dp"
                 android:textStyle="bold"
-                android:id="@+id/txtdatebilldetail"
+                android:id="@+id/txtdatebilldetailadmin"
                 android:textSize="20sp"/>
         </LinearLayout>
 
@@ -148,32 +148,32 @@
                 android:textColor="#FB1D1D"
                 android:paddingLeft="10dp"
                 android:textStyle="bold"
-                android:id="@+id/txttongtienbilldetail"
+                android:id="@+id/txttongtienbilldetailadmin"
                 android:textSize="20sp"/>
         </LinearLayout>
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thanh toán:"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
-    <TextView
-        android:id="@+id/txtphuongthucbilldetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text= "Tiền mặt"
-        android:paddingLeft="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="20sp"/>
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thanh toán:"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/txtphuongthucbilldetailadmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "Tiền mặt"
+                android:paddingLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+        </LinearLayout>
         <TextView
-            android:id="@+id/txtststusbilldetail"
+            android:id="@+id/txtststusbilldetail_admin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Chờ Xác nhận"
@@ -186,7 +186,7 @@
         </TextView>
 
         <Button
-            android:id="@+id/btnxacnhandonhang"
+            android:id="@+id/btnxacnhandonhang_admin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -196,17 +196,9 @@
             android:textStyle="bold"
             android:textAllCaps="false"
             android:layout_gravity="center"
-            android:text="Xác nhận đã nhận hàng"
+            android:text="Xác nhận đơn hàng hàng"
             android:background="@drawable/custombuttom_addtocart"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hủy đơn"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:textAllCaps="false"
-            android:id="@+id/btndelete"/>
+
     </LinearLayout>
 
 

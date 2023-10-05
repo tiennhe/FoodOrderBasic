@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.foodorderbasic.Admin.AdminActivity;
 import com.example.foodorderbasic.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -66,8 +67,17 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Intent intent = new Intent(LoginActivity.this , MainActivity.class);
-                            startActivity(intent);
+
+
+                            if(email.equals("admin@gmail.com")){
+                                Intent intent1 = new Intent(LoginActivity.this , AdminActivity.class);
+                                startActivity(intent1);
+                            }
+
+                            else {
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            }
 
 
                             finishAffinity();

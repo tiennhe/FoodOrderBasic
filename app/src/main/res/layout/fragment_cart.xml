@@ -54,25 +54,26 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+
         android:layout_alignParentBottom="true"
-
-
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
 
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tổng tiền:"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
+            android:layout_gravity="center"
             android:id="@+id/txttongtien"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+
             android:text="626000VNĐ"
             android:maxLines="2"
             android:ellipsize="end"
@@ -81,6 +82,7 @@
             android:textStyle="bold" />
 
         <Button
+            android:layout_gravity="right"
             android:id="@+id/btndathang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

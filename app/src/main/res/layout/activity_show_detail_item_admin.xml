@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/relaytivelayoutshowdetail"
+    android:id="@+id/relaytivelayoutshowdetailadmin"
     tools:context=".Activity.ShowDetailItemActivity">
 
 
@@ -12,7 +12,7 @@
 
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarshowdetail"
+        android:id="@+id/toolbarshowdetailadmin"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
 
@@ -23,7 +23,7 @@
         android:background="#FF4C3F"
         app:layout_constraintTop_toTopOf="parent" >
         <TextView
-            android:id="@+id/toolbar_title"
+            android:id="@+id/toolbar_titleadmin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chi tiết món ăn"
@@ -35,12 +35,12 @@
 
 <RelativeLayout
     android:layout_margin="10dp"
-    android:id="@+id/layoutbanerdetail"
+    android:id="@+id/layoutbanerdetailadmin"
     android:layout_width="match_parent"
-    android:layout_below="@+id/toolbarshowdetail"
+    android:layout_below="@+id/toolbarshowdetailadmin"
     android:layout_height="wrap_content">
     <ImageView
-        android:id="@+id/imgshowdetail"
+        android:id="@+id/imgshowdetailadmin"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:src="@drawable/suonxaochuanot"
@@ -48,7 +48,7 @@
         />
 
     <TextView
-        android:id="@+id/txtphantramgiamgia"
+        android:id="@+id/txtphantramgiamgiaadmin"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_alignParentEnd="true"
@@ -61,11 +61,11 @@
 </RelativeLayout>
 
     <TextView
-
-        android:id="@+id/txtnameshowdetail"
+        android:layout_margin="10dp"
+        android:id="@+id/txtnameshowdetailadmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/layoutbanerdetail"
+        android:layout_below="@+id/layoutbanerdetailadmin"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
@@ -75,21 +75,24 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 <LinearLayout
-    android:layout_margin="5dp"
-    android:id="@+id/layoutgia"
-    android:layout_below="@+id/txtnameshowdetail"
+    android:layout_margin="10dp"
+    android:id="@+id/layoutgiaadmin"
+    android:layout_below="@+id/txtnameshowdetailadmin"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     android:orientation="horizontal">
+
     <TextView
 
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Gía:"
+
         android:textSize="15sp"
-        android:textStyle="bold"
-        android:text="Gía:"/>
+        android:textStyle="bold" />
     <TextView
-        android:id="@+id/giagiamdetail"
+        android:id="@+id/giagiamdetailadmin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
@@ -98,7 +101,7 @@
         android:textColor="#FD3E3E"
         android:text="760000 VNĐ"/>
     <TextView
-        android:id="@+id/giagocdetail"
+        android:id="@+id/giagocdetailadmin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
@@ -108,10 +111,10 @@
 </LinearLayout>
 
     <View
-        android:id="@+id/viewline"
+        android:id="@+id/viewlineadmin"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/layoutgia"
+        android:layout_height="2dp"
+        android:layout_below="@+id/layoutgiaadmin"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -119,58 +122,81 @@
         android:background="#FD2E2E" />
 
     <TextView
-        android:id="@+id/titlemota"
+        android:id="@+id/titlemotaadmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mô tả"
-        android:layout_below="@+id/viewline"
+        android:layout_below="@+id/viewlineadmin"
         android:textStyle="bold"
+        android:layout_margin="10dp"
         android:textSize="18dp"
         android:textColor="#FF3939"/>
 
     <TextView
-        android:id="@+id/txtmotashowdetail"
+        android:id="@+id/txtmotashowdetailadmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/titlemota"
+        android:layout_below="@+id/titlemotaadmin"
         android:layout_marginStart="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:text="sdnakjdsadkjdnsadksa" />
     <TextView
-        android:id="@+id/titleimg"
+        android:id="@+id/titleimgadmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Một số hình ảnh khac"
-        android:layout_below="@+id/txtmotashowdetail"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/txtmotashowdetailadmin"
         android:textStyle="bold"
         android:textSize="18dp"
         android:textColor="#FF3939"/>
 
     <androidx.cardview.widget.CardView
-        android:layout_below="@+id/titleimg"
+        android:layout_below="@+id/titleimgadmin"
         android:layout_width="match_parent"
         android:id="@+id/cardviewimgother"
         android:layout_height="wrap_content"/>
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:layout_below="@+id/cardviewimgother"
+    android:orientation="horizontal">
     <Button
-        android:id="@+id/btnaddtocartshowdetail"
-        android:layout_width="match_parent"
+        android:id="@+id/btndeleteshowdetail"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-
-
-        android:layout_below="@+id/cardviewimgother"
-
-        android:background="@drawable/custombuttom_addtocart"
-        android:text="Thêm sản phẩm vào giỏ hàng"
-        android:textAllCaps="false"
+            android:layout_marginRight="5dp"
+        android:background="@drawable/custombuttom_delete"
+        android:text="Delete Product"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        />
 
 
+    <Button
+        android:id="@+id/btnupdatecartshowdetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/custombuttom_addtocart"
+        android:text="Update product"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        />
+</LinearLayout>
 
 
 

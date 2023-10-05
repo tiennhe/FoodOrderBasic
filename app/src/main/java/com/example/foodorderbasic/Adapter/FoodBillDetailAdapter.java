@@ -59,16 +59,21 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
         if(model.getStatus_Bill()==0){
             holder.txtstatus.setText("Chờ Xác nhận");
             holder.buttonxacnhandonhang.setVisibility(View.GONE);
-
         }
         else if(model.getStatus_Bill()==1){
             holder.txtstatus.setText("Đang giao");
             holder.buttonxacnhandonhang.setVisibility(View.VISIBLE);
+            holder.btndelete.setVisibility(View.GONE);
         }else if(model.getStatus_Bill()==2){
             holder.txtstatus.setText("Đã nhận");
+            holder.buttonxacnhandonhang.setVisibility(View.GONE);
+            holder.btndelete.setVisibility(View.GONE);
         }
-
-
+        else if(model.getStatus_Bill()==6){
+            holder.txtstatus.setText("Đã Hủy");
+            holder.buttonxacnhandonhang.setVisibility(View.GONE);
+            holder.btndelete.setVisibility(View.GONE);
+        }
         holder.txthoten.setText(model.getHoten());
         holder.txtdiachi.setText(model.getAdressgiaohang());
         holder.txtngaydathang.setText(model.getDate());
@@ -78,18 +83,26 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
         holder.listproductbilldetail.setText(model.getListsanpham());
 
 
+        holder.buttonxacnhandonhang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                model.setStatus_Bill(2);
+                BillDatabase.getInstance(context).billDAO().updateBill(model);
+                notifyDataSetChanged();
+            }
+        });
+
 
         holder.btndelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AlertDialog.Builder(context).setTitle("Xóa bản ghi").setMessage("Bạn có chắc chắn xóa bản ghi này?")
+                new AlertDialog.Builder(context).setTitle("Hủy đơn hàng").setMessage("Bạn có chắc chắn hủy đơn hàng này")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-
-                                BillDatabase.getInstance(context).billDAO().deleteBill(model);
-                                Toast.makeText(context, "delete successfully", Toast.LENGTH_SHORT).show();
-                                arrayList  = (ArrayList<BillModel>) BillDatabase.getInstance(context).billDAO().getlistBill();
+                                model.setStatus_Bill(6);
+                                BillDatabase.getInstance(context).billDAO().updateBill(model);
+                                Toast.makeText(context, "hủy đơn hàng thành công", Toast.LENGTH_SHORT).show();
                                 notifyDataSetChanged();
                             }
                         }).setNegativeButton("No", null).show();

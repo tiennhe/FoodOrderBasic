@@ -1,4 +1,4 @@
-package com.example.foodorderbasic.Adapter;
+package com.example.foodorderbasic.AdapterAdmin;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,21 +10,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.foodorderbasic.Activity.ShowDetailItemActivity;
+import com.example.foodorderbasic.Admin.ShowDetailItemActivityAdmin;
 import com.example.foodorderbasic.Model.FoodModel;
 import com.example.foodorderbasic.R;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class FoodproductAdapter extends RecyclerView.Adapter<FoodproductAdapter.ViewHolder> {
+public class FoodproductAdapterAdmin extends RecyclerView.Adapter<FoodproductAdapterAdmin.ViewHolder> {
         private Context context ;
         private ArrayList<FoodModel> list = new ArrayList<>() ;
 
@@ -32,7 +31,7 @@ public class FoodproductAdapter extends RecyclerView.Adapter<FoodproductAdapter.
 
 
 
-    public FoodproductAdapter(Context context, ArrayList<FoodModel> list) {
+    public FoodproductAdapterAdmin(Context context, ArrayList<FoodModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -60,13 +59,14 @@ public class FoodproductAdapter extends RecyclerView.Adapter<FoodproductAdapter.
         }
         holder.txtgiadiscount.setText(String.valueOf(model.getGia()-(model.getDiscount()/100)* model.getGia()));
         Glide.with(context).load(model.getImage()).into(holder.imgfoodproduct);
+
         if(model.getDiscount()!=0){
-            holder.txtgiagoc.setPaintFlags(holder.txtgiagoc.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                holder.txtgiagoc.setPaintFlags(holder.txtgiagoc.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ShowDetailItemActivity.class);
+                Intent intent = new Intent(view.getContext(), ShowDetailItemActivityAdmin.class);
 // Chuyển sang màn hình đích
                 // Đặt đối tượng vào Bundle
                 Bundle bundle = new Bundle();

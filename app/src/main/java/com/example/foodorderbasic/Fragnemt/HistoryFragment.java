@@ -74,11 +74,8 @@ FoodBillDetailAdapter adapter ;
             if(arrayList.isEmpty()){
                 Toast.makeText(getContext(), "Đơn hàng rỗng", Toast.LENGTH_SHORT).show();
             }
-
-
             LinearLayoutManager manager =new LinearLayoutManager(getContext());
             adapter = new FoodBillDetailAdapter(getContext() , arrayList);
-
             recyclerViewhienthilistbill.setLayoutManager(manager);
             recyclerViewhienthilistbill.setAdapter(
                     adapter);
