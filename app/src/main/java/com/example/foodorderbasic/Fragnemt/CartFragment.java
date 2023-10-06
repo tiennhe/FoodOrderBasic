@@ -147,13 +147,13 @@ public class CartFragment extends Fragment {
                 Date currentDate = calendar.getTime();
 
                 // Format ngày giờ theo định dạng mong muốn
-                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
                 String formattedDate = dateFormat.format(currentDate);
 
                 SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
                 String formattedTime = timeFormat.format(currentDate);
 
-                String date = formattedDate+" "+formattedTime;
+                String date = formattedDate;
 
                 if(phuongthuc.isEmpty()){
                     txterrphuongthuc.setVisibility(View.VISIBLE);

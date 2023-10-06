@@ -24,6 +24,12 @@ public interface BillDAO {
     @Query("SELECT * FROM bill_list_produts Where status_Bill = :status")
     List<BillModel> getlistBillbyStatus(int status);
 
+
+
+    @Query("SELECT * FROM bill_list_produts WHERE  date >=  :startDate  and date<= :enddate")
+    List<BillModel> getProductsByDateRange(String startDate , String enddate);
+
+
     @Update
     void updateBill(BillModel billModel);
 

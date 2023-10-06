@@ -38,10 +38,7 @@ public class FoodCartAdapter  extends  RecyclerView.Adapter<FoodCartAdapter.View
         this.arrayList = arrayList;
         this.tongtien = tongtien;
     }
-
     double gia = 0;
-
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

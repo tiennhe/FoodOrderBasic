@@ -76,7 +76,7 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
         }
         holder.txthoten.setText(model.getHoten());
         holder.txtdiachi.setText(model.getAdressgiaohang());
-        holder.txtngaydathang.setText(model.getDate());
+        holder.txtngaydathang.setText(String.valueOf(model.getDate()));
         holder.txttongtien.setText(String.valueOf(model.getTongtien()));
         holder.txtsodienthoai.setText(model.getSodienthoai());
 
