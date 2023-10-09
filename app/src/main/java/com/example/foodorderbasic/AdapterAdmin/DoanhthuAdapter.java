@@ -23,6 +23,7 @@ public class DoanhthuAdapter extends RecyclerView.Adapter<DoanhthuAdapter.ViewHo
     private tongtienbilladmin tongtienbilladmin ;
 
     double  tongtien =0;
+    double count=0;
 
     public interface tongtienbilladmin{
         void tongtiendoanhthuadmin(double tongtien);
@@ -52,7 +53,7 @@ public class DoanhthuAdapter extends RecyclerView.Adapter<DoanhthuAdapter.ViewHo
             return;
         }
 
-        holder.txtidBill.setText(String.valueOf(model.getIdbill()));
+        holder.txtidBill.setText(count+"");
         holder.txtthucdonbill.setText(model.getListsanpham());
         holder.txttongtienbill.setText(String.valueOf(model.getTongtien()));
 
@@ -62,6 +63,7 @@ public class DoanhthuAdapter extends RecyclerView.Adapter<DoanhthuAdapter.ViewHo
 
         tongtienbilladmin.tongtiendoanhthuadmin(tongtien);
         tongtien = 0;
+        count++;
 
 
     }
