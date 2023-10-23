@@ -59,6 +59,7 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
         if(model.getStatus_Bill()==0){
             holder.txtstatus.setText("Chờ Xác nhận");
             holder.buttonxacnhandonhang.setVisibility(View.GONE);
+            holder.btndelete.setVisibility(View.VISIBLE);
         }
         else if(model.getStatus_Bill()==1){
             holder.txtstatus.setText("Đang giao");
@@ -79,7 +80,7 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
         holder.txtngaydathang.setText(String.valueOf(model.getDate()));
         holder.txttongtien.setText(String.valueOf(model.getTongtien()));
         holder.txtsodienthoai.setText(model.getSodienthoai());
-
+        holder.txtphuongthucthanhtoan.setText(model.getPhuongthucthanhtoan());
         holder.listproductbilldetail.setText(model.getListsanpham());
 
 
@@ -122,7 +123,7 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtmadonhang , txthoten , txtdiachi , txtsodienthoai , txtngaydathang , txtstatus , txttongtien , listproductbilldetail;
+        TextView txtmadonhang , txthoten , txtdiachi , txtsodienthoai , txtngaydathang , txtstatus , txttongtien , listproductbilldetail , txtphuongthucthanhtoan;
         RecyclerView rcllistproduct ;
         Button buttonxacnhandonhang , btndelete ;
 
@@ -137,7 +138,7 @@ public class FoodBillDetailAdapter extends RecyclerView.Adapter<FoodBillDetailAd
             txtstatus = itemView.findViewById(R.id.txtststusbilldetail);
             txttongtien = itemView.findViewById(R.id.txttongtienbilldetail);
             buttonxacnhandonhang = itemView.findViewById(R.id.btnxacnhandonhang);
-
+txtphuongthucthanhtoan = itemView.findViewById(R.id.txtphuongthucbilldetail);
             listproductbilldetail = itemView.findViewById(R.id.txtlistproduct);
 
             btndelete = itemView.findViewById(R.id.btndelete);

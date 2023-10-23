@@ -53,4 +53,5 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation("com.google.firebase:firebase-auth")
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
+    implementation("com.github.momo-wallet:mobile-sdk:1.0.7")
 }

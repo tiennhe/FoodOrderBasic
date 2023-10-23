@@ -15,11 +15,14 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,6 +66,7 @@ private ArrayList<FoodModel> arrayList = new ArrayList<>();
 
 ImageView imganhdaidien ;
 TextView txtname , txtquanliacout;
+EditText editTextsearch;
 
 
 private Handler handler = new Handler() ;
@@ -96,6 +100,8 @@ private Runnable runnable = new Runnable() {
         imganhdaidien = view.findViewById(R.id.imganhdaidien);
         txtname = view.findViewById(R.id.txtnameacount);
         txtquanliacout = view.findViewById(R.id.txtquanlyacount);
+
+
         txtquanliacout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,8 +144,16 @@ private Runnable runnable = new Runnable() {
         return view;
     }
 
-
-
+    private void filter(String text) {
+        ArrayList<FoodModel> foodModels = new ArrayList<>();
+        for (FoodModel item:foodModels
+             ) {
+            if(item.getName().toLowerCase() .contains(text.toLowerCase())){
+                foodModels.add(item);
+            }
+        }
+        adapter.Fillterlist(foodModels);
+    }
 
 
     private List<PhotoHeader> getListPhoto() {

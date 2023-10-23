@@ -76,12 +76,22 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
-            <EditText
-                android:id="@+id/edtphuongthuc"
+            <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/custom_edittext"
-                />
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/rdobttienmat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tiền mặt"/>
+                <RadioButton
+                    android:id="@+id/rdobtmomo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thanh toán bằng MOMO"/>
+            </RadioGroup>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

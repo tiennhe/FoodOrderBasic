@@ -25,6 +25,8 @@ public interface FoodDao {
     void updateFood(FoodModel foodModel);
     @Query("SELECT * FROM food_orders_basic WHERE idbill = :userId")
     List<FoodModel> getUsersById(int userId);
+    @Query("DELETE FROM food_orders_basic WHERE Uid = :productId")
+    void deleteById(String productId);
 
 
     @Delete

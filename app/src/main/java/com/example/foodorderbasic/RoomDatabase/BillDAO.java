@@ -21,6 +21,8 @@ public interface BillDAO {
 
     @Query("SELECT * FROM bill_list_produts Where Uid = :id")
     List<BillModel> getlistBillid(String id);
+    @Query("SELECT * FROM bill_list_produts Where Uid = :id and status_Bill= :status")
+    List<BillModel> getlistBillidbyStatus(String id , int status);
     @Query("SELECT * FROM bill_list_produts Where status_Bill = :status")
     List<BillModel> getlistBillbyStatus(int status);
 
@@ -29,7 +31,8 @@ public interface BillDAO {
     @Query("SELECT * FROM bill_list_produts WHERE  date >=  :startDate  and date<= :enddate")
     List<BillModel> getProductsByDateRange(String startDate , String enddate);
 
-
+    @Query("SELECT * FROM bill_list_produts ORDER BY idbill DESC LIMIT 1")
+    BillModel getLastBill();
     @Update
     void updateBill(BillModel billModel);
 

@@ -87,6 +87,11 @@ public class FoodproductAdapter extends RecyclerView.Adapter<FoodproductAdapter.
         return 0;
     }
 
+    public void Fillterlist(ArrayList<FoodModel> arrayList){
+        list=arrayList;
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgfoodproduct ;
         TextView txtdiscount , txtname , txtgiagoc , txtgiadiscount ;

@@ -67,6 +67,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:ci_drawable="@drawable/cutom_indicator"/>
 
+dp"
+        android:id="@+id/edtsearch"/>
+
     <androidx.recyclerview.widget.RecyclerView
 
         android:id="@+id/recycleview"
