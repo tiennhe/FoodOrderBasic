@@ -53,7 +53,7 @@ public class DoanhthuAdapter extends RecyclerView.Adapter<DoanhthuAdapter.ViewHo
             return;
         }
 
-        holder.txtidBill.setText(count+"");
+        holder.txtidBill.setText(position+"");
         holder.txtthucdonbill.setText(model.getListsanpham());
         holder.txttongtienbill.setText(String.valueOf(model.getTongtien()));
 

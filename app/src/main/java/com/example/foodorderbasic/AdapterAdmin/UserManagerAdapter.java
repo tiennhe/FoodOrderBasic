@@ -49,9 +49,13 @@ public class UserManagerAdapter extends RecyclerView.Adapter<UserManagerAdapter.
             return ;
         }
 
+        if(userModel.getEmail().equals("admin@gmail.com")){
+            holder.txtEmail.setVisibility(View.GONE);
+            holder.txtUid.setVisibility(View.GONE);
+            holder.btndisableacout.setVisibility(View.GONE);
+        }
 
-
-            holder.txtUid.setText(String.valueOf(count));
+        holder.txtUid.setText(String.valueOf(count));
 
         holder.txtEmail.setText(userModel.getEmail());
         holder.btndisableacout.setOnClickListener(new View.OnClickListener() {

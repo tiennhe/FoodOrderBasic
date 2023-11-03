@@ -148,10 +148,10 @@
         android:textSize="18dp"
         android:textColor="#FF3939"/>
 
-    <androidx.cardview.widget.CardView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_below="@+id/titleimg"
         android:layout_width="match_parent"
-        android:id="@+id/cardviewimgother"
+        android:id="@+id/rcliewimgother"
         android:layout_height="wrap_content"/>
 
 
@@ -161,18 +161,14 @@
         android:layout_height="wrap_content"
 
 
-        android:layout_below="@+id/cardviewimgother"
-
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
         android:background="@drawable/custombuttom_addtocart"
         android:text="Thêm sản phẩm vào giỏ hàng"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
-
-
-
-
 
 
 </RelativeLayout>

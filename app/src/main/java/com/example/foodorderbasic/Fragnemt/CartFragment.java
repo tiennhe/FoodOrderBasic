@@ -215,10 +215,10 @@ public class CartFragment extends Fragment {
                     Toast.makeText(getContext(), phuongthuc, Toast.LENGTH_SHORT).show();
 
                     if (user != null) {
-                        Toast.makeText(getContext(), user.getUid() + "", Toast.LENGTH_SHORT).show();
-                        BillModel billModel = new BillModel(phuongthuc, hoten, sodienthoai, adress, tongtien, 0, result, 3, user.getUid(), date);
-                        BillDatabase.getInstance(getContext()).billDAO().insertBill(billModel);
-                        Toast.makeText(getContext(), "đặt hàng thành công sucessfuly", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getContext(), user.getUid() + "", Toast.LENGTH_SHORT).show();
+//                        BillModel billModel = new BillModel(phuongthuc, hoten, sodienthoai, adress, tongtien, 0, result, 3, user.getUid(), date);
+//                        BillDatabase.getInstance(getContext()).billDAO().insertBill(billModel);
+//                        Toast.makeText(getContext(), "đặt hàng thành công sucessfuly", Toast.LENGTH_SHORT).show();
                         BillModel model = BillDatabase.getInstance(getContext()).billDAO().getLastBill();
                         requestPayment(model.getIdbill());
                         bottomSheetDialog.dismiss();

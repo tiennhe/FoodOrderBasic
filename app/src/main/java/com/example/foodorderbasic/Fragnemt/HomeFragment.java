@@ -261,9 +261,6 @@ private Runnable runnable = new Runnable() {
 
 
     }
-
-
-
     @Override
     public void onResume() {
         super.onResume();
