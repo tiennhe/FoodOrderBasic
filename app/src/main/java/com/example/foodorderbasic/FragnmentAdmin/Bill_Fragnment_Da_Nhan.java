@@ -41,7 +41,7 @@ public class Bill_Fragnment_Da_Nhan extends Fragment {
         View view =inflater.inflate(R.layout.fragment_bill__fragnment__da__nhan, container, false);
         recyclerView = view.findViewById(R.id.rclbilldanhanadmin);
         arrayList = new ArrayList<>();
-        arrayList = (ArrayList<BillModel>) BillDatabase.getInstance(getContext()).billDAO().getlistBillbyStatus(2);
+        arrayList = (ArrayList<BillModel>) BillDatabase.getInstance(getContext()).billDAO().getlistBillbyStatus(2 ,7);
         adapter = new ItemBillAdminAdapter(arrayList , getContext());
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);

@@ -42,7 +42,7 @@ private ItemBillAdminAdapter adapter;
         View view =  inflater.inflate(R.layout.fragment_bill__fragnment__xac__nhan, container, false);
         recyclerView = view.findViewById(R.id.rclxacnhandonadmin);
         arrayList = new ArrayList<>();
-        arrayList = (ArrayList<BillModel>) BillDatabase.getInstance(getContext()).billDAO().getlistBillbyStatus(0);
+        arrayList = (ArrayList<BillModel>) BillDatabase.getInstance(getContext()).billDAO().getlistBillbyStatus(0,1);
         adapter = new ItemBillAdminAdapter(arrayList , getContext());
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);

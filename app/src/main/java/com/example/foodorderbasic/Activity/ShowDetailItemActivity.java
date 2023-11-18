@@ -125,8 +125,7 @@ public class ShowDetailItemActivity extends AppCompatActivity {
                 double gia = i * (object.getGia() - (object.getGia() * object.getDiscount() / 100));
 
                 double giadiscount = object.getGia() - (object.getGia() * object.getDiscount() / 100);
-                Toast.makeText(ShowDetailItemActivity.this, giadiscount + "giá discount", Toast.LENGTH_SHORT).show();
-                Toast.makeText(ShowDetailItemActivity.this, gia + "", Toast.LENGTH_SHORT).show();
+       
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 FoodModel model = new FoodModel(soluong, name, object.getGia(), img, user.getUid(), giadiscount, gia);
 

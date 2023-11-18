@@ -21,10 +21,10 @@ public interface BillDAO {
 
     @Query("SELECT * FROM bill_list_produts Where Uid = :id")
     List<BillModel> getlistBillid(String id);
-    @Query("SELECT * FROM bill_list_produts Where Uid = :id and status_Bill= :status")
-    List<BillModel> getlistBillidbyStatus(String id , int status);
-    @Query("SELECT * FROM bill_list_produts Where status_Bill = :status")
-    List<BillModel> getlistBillbyStatus(int status);
+    @Query("SELECT * FROM bill_list_produts Where Uid = :id and status_Bill= :status or status_Bill= :status2 ")
+    List<BillModel> getlistBillidbyStatus(String id , int status  , int status2);
+    @Query("SELECT * FROM bill_list_produts Where status_Bill = :status or status_Bill= :status2 ")
+    List<BillModel> getlistBillbyStatus(int status , int status2);
 
 
 

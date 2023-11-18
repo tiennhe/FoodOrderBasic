@@ -46,7 +46,7 @@ FoodBillDetailAdapter adapter ;
         recyclerViewhienthilistbill =view.findViewById(R.id.rclbillchoxacnhanuser);
               user= FirebaseAuth.getInstance().getCurrentUser();
         if(user!=null){
-            arrayList = (ArrayList<BillModel>) BillDatabase.getInstance(getContext()).billDAO().getlistBillidbyStatus(user.getUid() , 0);
+            arrayList = (ArrayList<BillModel>) BillDatabase.getInstance(getContext()).billDAO().getlistBillidbyStatus(user.getUid() , 0 ,1 );
             if(arrayList.isEmpty()){
                 Toast.makeText(getContext(), "Đơn hàng rỗng", Toast.LENGTH_SHORT).show();
             }

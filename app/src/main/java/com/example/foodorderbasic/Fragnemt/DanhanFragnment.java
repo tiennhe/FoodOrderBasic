@@ -47,7 +47,7 @@ public class DanhanFragnment extends Fragment {
         recyclerViewhienthilistbill = view.findViewById(R.id.rclbilldanhanuseruser);
         user= FirebaseAuth.getInstance().getCurrentUser();
         if(user!=null){
-            arrayList = (ArrayList<BillModel>) BillDatabase.getInstance(getContext()).billDAO().getlistBillidbyStatus(user.getUid() , 2);
+            arrayList = (ArrayList<BillModel>) BillDatabase.getInstance(getContext()).billDAO().getlistBillidbyStatus(user.getUid() , 2 , 7);
             if(arrayList.isEmpty()){
                 Toast.makeText(getContext(), "Đơn hàng rỗng", Toast.LENGTH_SHORT).show();
             }

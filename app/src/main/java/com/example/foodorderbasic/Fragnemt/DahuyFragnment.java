@@ -48,7 +48,7 @@ public class DahuyFragnment extends Fragment {
 
               user= FirebaseAuth.getInstance().getCurrentUser();
         if(user!=null){
-            arrayList = (ArrayList<BillModel>) BillDatabase.getInstance(getContext()).billDAO().getlistBillidbyStatus(user.getUid() , 6);
+            arrayList = (ArrayList<BillModel>) BillDatabase.getInstance(getContext()).billDAO().getlistBillidbyStatus(user.getUid() , 6 , 7);
             if(arrayList.isEmpty()){
                 Toast.makeText(getContext(), "Đơn hàng rỗng", Toast.LENGTH_SHORT).show();
             }

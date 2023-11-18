@@ -68,28 +68,29 @@
         >
 
     </EditText>
+
+
     <EditText
 
-        android:textColor="@color/white"
-        android:drawableLeft="@drawable/baseline_vpn_key_24"
         android:id="@+id/til_Pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="35dp"
+        android:drawableLeft="@drawable/baseline_vpn_key_24"
+        android:hint="    Pass"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:hint="    Pass"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginTop="10dp"
-        android:textColorHint="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/til_Email"
-        app:passwordToggleTint="@color/white"
-        app:passwordToggleEnabled="true">
-
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/white">
 
 
     </EditText>
-
 
     <Button
         android:id="@+id/btnSignIn"
